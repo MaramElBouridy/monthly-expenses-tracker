@@ -1,10 +1,14 @@
-export interface ExpenseEntry {
-  id: string
-  amount: number
-  note: string
+export interface Transaction {
+  id: string;
+  amount: number;
+  note: string;
 }
 
 export interface MonthlyData {
-  personalExpenses: ExpenseEntry[]
-  maramMoney: ExpenseEntry[]
+  personalExpenses: Transaction[];
+  maramMoney: Transaction[];
 }
+
+export type MonthlyRecords = Record<string, MonthlyData>;
+
+export type SectionKey = keyof MonthlyData;
